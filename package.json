@@ -1,7 +1,10 @@
 {
   "name": "zero-qiniu",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "zero module",
+  "dependencies": {
+    "base64": "^2.1.0"
+  },
   "zero": {
     "dependencies": {
       "request": "^0.0.1",
