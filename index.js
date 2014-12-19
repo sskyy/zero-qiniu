@@ -17,9 +17,11 @@ function uptoken( config) {
   //putPolicy.returnBody = returnBody;
   //putPolicy.asyncOps = asyncOps;
   //putPolicy.expires = expires;
-  putPolicy.persistentOps= ['avthumb/webm/an/1','vsample/jpg/ss/1/t/1/pattern/'+base64_encode(new Buffer(uuid.v4()+"-$(count)"))].join(";");
-  putPolicy.persistentPipeline = config.persistentPipeLine;//"twentyone"
+  //if(putPolicy.persistentOps) putPolicy.persistentOps= ['avthumb/webm/an/1','vsample/jpg/ss/1/t/1/pattern/'+base64_encode(new Buffer(uuid.v4()+"-$(count)"))].join(";");
+  if(putPolicy.persistentOps) putPolicy.persistentOps = config.persistentOps
+  if(config.persistentPipeLine) putPolicy.persistentPipeline = config.persistentPipeLine;//"twentyone"
 
+  console.log( config, "config........")
   return putPolicy.token();
 }
 
